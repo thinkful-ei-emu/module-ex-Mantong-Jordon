@@ -16,6 +16,7 @@ const store = (function() {
       return {
           hideCheckedItems,
           searchTerm,
+          items
 
       };
 
