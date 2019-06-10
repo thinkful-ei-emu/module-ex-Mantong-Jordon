@@ -1,5 +1,5 @@
 'use strict';
-/* global store, cuid, $ */
+/* global store, cuid, $,Item */
 
 // eslint-disable-next-line no-unused-vars
 const shoppingList = (function(){
@@ -111,9 +111,9 @@ const shoppingList = (function(){
     store.hideCheckedItems = !store.hideCheckedItems;
   }
   
-  function setSearchTerm(val) {
-    store.searchTerm = val;
-  }
+  // function setSearchTerm(val) {
+  //   store.searchTerm = val;
+  // }
   
   
   function handleDeleteItemClicked() {
@@ -138,17 +138,17 @@ const shoppingList = (function(){
     });
   }
   
-  function handleToggleFilterClick() {
-    $('.js-filter-checked').click(() => {
-      toggleCheckedItemsFilter();
-      render();
-    });
-  }
+  // function handleToggleFilterClick() {
+  //   $('.js-filter-checked').click(() => {
+  //     toggleCheckedItemsFilter();
+  //     render();
+  //   });
+  // }
   
   function handleShoppingListSearch() {
     $('.js-shopping-list-search-entry').on('keyup', event => {
       const val = $(event.currentTarget).val();
-      setSearchTerm(val);
+      //etSearchTerm(val);
       render();
     });
   }
@@ -158,8 +158,9 @@ const shoppingList = (function(){
     handleItemCheckClicked();
     handleDeleteItemClicked();
     handleEditShoppingItemSubmit();
-    handleToggleFilterClick();
+    //handleToggleFilterClick();
     handleShoppingListSearch();
+    
   }
 
   // This object contains the only exposed methods from this module:

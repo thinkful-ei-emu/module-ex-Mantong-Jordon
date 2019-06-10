@@ -12,6 +12,15 @@ const store = (function() {
   let hideCheckedItems = false;
   let searchTerm = '';
 
+  function toggleCheckedFilter(){
+    this.hideCheckedItems=false;
+  }
+
+  function setSearchTerm(first,...other){
+    this.searchTerm=first;
+
+  }
+
   function findById(id){
     return store.items.find(item => item.id === id);
   }
@@ -56,7 +65,9 @@ const store = (function() {
     addItem,
     findAndToggleChecked,
     findAndUpdateName,
-    findAndDelete
+    findAndDelete,
+    toggleCheckedFilter,
+    setSearchTerm
   };
 
 }());
