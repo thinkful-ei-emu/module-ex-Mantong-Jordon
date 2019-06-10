@@ -12,41 +12,41 @@ const store = (function() {
   let hideCheckedItems = false;
   let searchTerm = '';
 
-    function findById(id){
-      return store.items.find(item => item.id === id);
-    }
+  function findById(id){
+    return store.items.find(item => item.id === id);
+  }
 
-    function addItem(name){
-      try{
-        Item.validateName(name);
-        this.items.push(Item.create(name));
-      }
-      catch(error){
-        console.log(`${error.message}`);
-      }
+  function addItem(name){
+    try{
+      Item.validateName(name);
+      this.items.push(Item.create(name));
     }
+    catch(error){
+      console.log(`${error.message}`);
+    }
+  }
 
-    function findAndToggleChecked(id){
-      let toggle = this.findById(id);
-      toggle.checked = true;
-    }
+  function findAndToggleChecked(id){
+    let toggle = this.findById(id);
+    toggle.checked = true;
+  }
 
-    function findAndUpdateName(id, newName){
-      try{
-        Item.validateName(newName);
-        let update = this.findById(id);
-        update.name = newName;
-      }
-      catch(error){
-        console.log(`Cannot update name: ${error.message}`);
-      }
+  function findAndUpdateName(id, newName){
+    try{
+      Item.validateName(newName);
+      let update = this.findById(id);
+      update.name = newName;
     }
+    catch(error){
+      console.log(`Cannot update name: ${error.message}`);
+    }
+  }
 
-    function findAndDelete(id){
-      let filteredItem = store.items.filter(word => word.id === id);
-      store.items.splice(filteredItem, 1);
-      //In console, run shoppinglist.render() after 
-    }
+  function findAndDelete(id){
+    let filteredItem = store.items.filter(word => word.id === id);
+    store.items.splice(filteredItem, 1);
+    //In console, run shoppinglist.render() after 
+  }
 
   return {
     hideCheckedItems,
