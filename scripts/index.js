@@ -18,6 +18,6 @@ function main() {
   shoppingList.render();
 }
 
-// $(main);
+$(main);
 console.log(store);
 console.log(foo);
